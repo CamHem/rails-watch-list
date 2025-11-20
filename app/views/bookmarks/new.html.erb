@@ -1,0 +1,7 @@
+<h1>Ajouter un film à cette liste:</h1>
+ <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :movie_id, collection: Movie.all  %>
+    <%= f.input :comment %>
+    <%= f.submit class:"btn btn-primary"%>
+    <%= link_to "Retour", list_path(@list) %>
+  <% end %>

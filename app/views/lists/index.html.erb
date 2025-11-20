@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gqmagazine.fr/photos/603e6a8da9360b0585bcbc6a/16:9/w_2240,c_limit/108387402);">
+  <div class="container">
+    <h1>Mes listes de film</h1>
+  </div>
+</div>
+
+
+<div class="cards">
+  <% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= link_to list.name, list_path(list) %>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "Create a new list", new_list_path %>
