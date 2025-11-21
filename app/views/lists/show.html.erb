@@ -3,10 +3,8 @@
 <h1><%= @list.name %></h1>
 
 <ul> <% @list.movies.each do |movie| %>
-  <li><strong><%= movie.title %></strong> | <%= movie.overview %>
+  <li><strong><%= movie.title %></strong> | <%= movie.overview %> </li>
   <% end %>
-  Note: <%= bookmark = Bookmark.find_by(movie: movie, list: @list) %>
-  </li>
   </ul>
 
 <%= link_to "Ajouter un film à cette liste", new_list_bookmark_path(@list) %>
