@@ -72,3 +72,6 @@ gem "sassc-rails"
 
 # Security
 gem "dotenv-rails"
+
+# Cloudinary
+gem "cloudinary"

@@ -1,4 +1,11 @@
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-  <% end %>
+<div class="container">
+  <h1>Créer une liste</h1>
+
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, label: "Nom de la liste" %>
+    <%= f.input :image, as: :file, label: "Image" %>
+    <%= f.submit 'Créer', class: "btn btn-primary" %>
+    <%= link_to 'Retour', lists_path, class: "btn btn-outline-secondary" %>
+    <% end %>
+
+</div>
