@@ -7,14 +7,20 @@
   </div>
 </div>
 
-<div class="container">
-  <ul> <% @list.movies.each do |movie| %>
-    <li><strong><%= movie.title %></strong> | <%= movie.overview %>
-    <%#= link_to "X", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } %>
-    </li>
-    <% end %>
-    </ul>
+<div class="container mt-3">
+<% @list.movies.each do |movie| %>
+  <div class="card" style="width: 18rem;">
+    <%# <img src="..." class="card-img-top" alt="..."> %>
+    <div class="card-body">
+      <p class="card-text"><strong><%= movie.title %></strong></p>
+      <p class="card-text"><%= movie.overview %></p>
 
-  <%= link_to "Ajouter un film", new_list_bookmark_path(@list), class: "btn btn-primary" %>
-  <%= link_to "Voir toutes les listes", lists_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+<% end %>
+
+    <%#= link_to "X", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } %>
+
+  <%= link_to "Ajouter un film", new_list_bookmark_path(@list), class: "btn btn-primary mt-4" %>
+  <%= link_to "Voir toutes les listes", lists_path, class: "btn btn-outline-secondary mt-4" %>
 </div>
