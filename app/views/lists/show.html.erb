@@ -22,17 +22,21 @@
           <h5 class="card-text fw-bold"><%= movie.title %></h5>
           <p class="card-text"><%= movie.overview %></p>
           <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-          <figcaption class="blockquote-footer mt-2">
-          <%= bookmark.comment %>
-          </figcaption>
+          <div class="d-flex justify-content-between align-items-center">
+            <figcaption class="blockquote-footer mt-2">
+            <%= bookmark.comment %>
+            </figcaption>
+            <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
+            <i class="fa-solid fa-trash mb-1"></i>
+            <% end %>
+          </div>
         </div>
       </div>
       </div>
     <% end %>
     </div>
 
-    <%#= link_to "X", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } %>
-
+<%# CTA %>
 
   <%= link_to "Ajouter un film", new_list_bookmark_path(@list), class: "btn btn-primary mt-4" %>
   <%= link_to "Voir toutes les listes", lists_path, class: "btn btn-outline-secondary mt-4" %>
